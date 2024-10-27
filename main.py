@@ -18,7 +18,7 @@ def draw_circle(t, radius, position, color):
     t.begin_fill()
     t.circle(radius)  # Draw a circle with the given radius
     t.end_fill()
-
+    done()
 
 
 # Draw 8 circles with random positions, radii, and colors
