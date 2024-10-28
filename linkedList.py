@@ -38,4 +38,14 @@ def display(head):
 # Calling the display function
 display(Head)
 
-#sear
+#search for node values 0(n)
+def search(head, val):
+    curr = head
+    while curr:
+        if curr.val == val:
+            return True
+        curr = curr.next
+
+    return False
+    
+search(Head,7)
