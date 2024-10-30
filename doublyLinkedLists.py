@@ -37,6 +37,20 @@ def insert_at_tail(head, tail, val):
     return head, new_node  # Always return the head and new tail
 
 
+def remove_head(head, tail):
+
+    if head is None:
+        return None, None
+    else:
+        new_head = head.next_node
+        if new_head:
+            new_head.prev_node = None
+        else:
+            tail = None
+        return new_head, tail
+
+def remove_tail
+
 # Creating a doubly linked list with one node
 head = tail = DoublyNode(1)
 
@@ -48,6 +62,7 @@ head, tail = insert_at_beginning(head, tail, 7)
 
 # Insert a node at the tail
 head, tail = insert_at_tail(head, tail, 40)
+head , tail = remove_head(head, tail)
 
 # Display the list
 display(head)
