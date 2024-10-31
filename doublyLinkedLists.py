@@ -49,9 +49,52 @@ def remove_head(head, tail):
             tail = None
         return new_head, tail
 
-def remove_tail
 
-# Creating a doubly linked list with one node
+def remove_tail(head, tail):
+    if tail is None:
+        return None, None
+    else:
+        new_tail = tail.prev_node
+        if new_tail:
+            new_tail.next_node = None
+        else:
+            head = None  # If the list becomes empty, set head to None as well
+        return head, new_tail
+
+
+def remove_by_value(head, tail, value_to_remove):
+    current_node = head
+
+    # transverse to the list to find the value.
+    while current_node:
+        if current_node.val == value_to_remove:
+            # if node is the head
+            if current_node == head:
+                head, _ = remove_head(head, tail)
+                if head is None:
+                    tail = None
+                return head, tail
+
+            # Node is the tail
+            elif current_node == tail:
+                tail, _ = remove_tail(head, tail)
+                if tail == None:
+                    head = None
+                    return head, tail
+
+            # Node in the middle
+            else:
+                prev_node = current_node.prev_node
+                next_node = current_node.next_node
+                prev_node.next_node = next_node
+                next_node.prev_node = prev_node
+                return head, tail
+        current_node = current_node.next_node
+
+    print("value not found in the list")
+    return head, tail
+
+        # Creating a doubly linked list with one node
 head = tail = DoublyNode(1)
 
 # Insert new nodes at the beginning
@@ -62,7 +105,9 @@ head, tail = insert_at_beginning(head, tail, 7)
 
 # Insert a node at the tail
 head, tail = insert_at_tail(head, tail, 40)
-head , tail = remove_head(head, tail)
-
+head, tail = remove_head(head, tail)
+head, tail = remove_tail(head, tail)
+head, tail = remove_tail(head, tail)
+head,tail =remove_by_value(head,tail,5)
 # Display the list
 display(head)
