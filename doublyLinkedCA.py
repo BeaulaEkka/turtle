@@ -52,8 +52,14 @@ class DoublyLinkedList:
         new_head = Node(new_value)
         current_head = self.head_node
 
-        if current_head:
+        if current_head is not None:
             current_head.set_prev_node(new_head)
+            new_head.set_next_node(current_head)
+
+        self.head_node=new_head
+
+        if self.tail_node is None:
+            self.tail_node = new_head
 
     def add_to_tail(self, new_value):
         new_tail = Node(new_value)
@@ -124,6 +130,7 @@ doubly_linked_list = DoublyLinkedList()
 # Add nodes to the head
 doubly_linked_list.add_to_head(5)
 doubly_linked_list.add_to_head(10)
+doubly_linked_list.add_to_head(15)
 
 # Print the value of the head node
 print(doubly_linked_list.head_node.get_value())  # This should output 10
