@@ -14,3 +14,5 @@ print(sum_digits(552) == 12)
 print(sum_digits(123456789) == 45)
 print(sum_digits(32))
 print(sum_digits(-1))
+
+#recrusive
