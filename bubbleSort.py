@@ -42,6 +42,10 @@ def bubble_sort_optimized(arr):
                 arr[idx], arr[idx + 1] = arr[idx + 1], arr[idx]
 
 
+#insertion Sort-O(n^2)
+#space-O(1)
+
+
 # Example array
 A = [-5, 3, 2, 1, -3, -3, 7, 2, 2]
 
