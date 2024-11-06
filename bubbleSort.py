@@ -54,16 +54,28 @@ def insertion_sort(arr):
                 break
 
 
-#selection Sort
+# selection Sort// sorted and unsorted part of the spray
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        print('i:', arr[i])
+        for j in range(i+1, n):
+            print('j:  ', arr[i+1])
+            if arr[j] < arr[min_index]:
+                print(f'swap with {arr[min_index]}')
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
 
 
-            # Example array
+        # Example array
 A = [-5, 3, 2, 1, -3, -3, 7, 2, 2]
 
 # Copy the array for both sorting methods
 A_unoptimized = A.copy()
 A_optimized = A.copy()
 A_insertion = A.copy()
+A_selection = A.copy()
 
 # Sort using the unoptimized bubble sort
 bubble_sort_unoptimized(A_unoptimized)
@@ -75,3 +87,6 @@ print("Optimized Sorted Array:", A_optimized)
 
 insertion_sort(A_insertion)
 print('A_insertion', A_insertion)
+
+selection_sort(A_selection)
+print('selection_sort', A_selection)
