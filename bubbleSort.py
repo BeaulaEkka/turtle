@@ -87,6 +87,7 @@ def merge(left, right):
 while left & & right:
 
 break
+
 return result
 
 # Example array
