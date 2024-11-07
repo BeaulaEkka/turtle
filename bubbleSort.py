@@ -97,7 +97,6 @@ A = [-5, 3, 2, 1, -3, -3, 7, 2, 2]
 A_unoptimized = A.copy()
 A_optimized = A.copy()
 A_insertion = A.copy()
-
 A_selection = A.copy()
 
 
