@@ -68,6 +68,18 @@ def selection_sort(arr):
         arr[i], arr[min_index] = arr[min_index], arr[i]
 
 
+
+#merge Sort also called divide and conquer !
+
+
+
+
+
+
+
+
+
+
         # Example array
 A = [-5, 3, 2, 1, -3, -3, 7, 2, 2]
 
