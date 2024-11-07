@@ -99,6 +99,7 @@ A_optimized = A.copy()
 A_insertion = A.copy()
 A_selection = A.copy()
 
+
 # Sort using the unoptimized bubble sort
 bubble_sort_unoptimized(A_unoptimized)
 print("Unoptimized Sorted Array:", A_unoptimized)
