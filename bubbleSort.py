@@ -68,19 +68,28 @@ def selection_sort(arr):
         arr[i], arr[min_index] = arr[min_index], arr[i]
 
 
+# merge Sort also called divide and conquer !
+def merge_sort(items):
+    if len(items) <= 1:
+        return items
 
-#merge Sort also called divide and conquer !
+    middle_index = len(items) // 2
+    left_split = items[:middle_index]
+    right_split = items[middle_index:]
+
+    return middle_index, left_split, right_split
 
 
+def merge(left, right):
+    result = []
 
 
+while left & & right:
 
+break
+return result
 
-
-
-
-
-        # Example array
+# Example array
 A = [-5, 3, 2, 1, -3, -3, 7, 2, 2]
 
 # Copy the array for both sorting methods
