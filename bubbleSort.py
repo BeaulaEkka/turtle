@@ -77,18 +77,44 @@ def merge_sort(items):
     left_split = items[:middle_index]
     right_split = items[middle_index:]
 
-    return middle_index, left_split, right_split
+    left_sorted = merge_sort(left_split)
+    right_sorted = merge_sort(right_split)
+
+    return merge(left_sorted, right_sorted)
 
 
 def merge(left, right):
     result = []
 
+    while (left and right):
+        if left[0] < right[0]:
+            result.append(left[0])
+            left.pop(0)
+        else:
+            result.append(right[0])
+            right.pop(0)
 
-while left & & right:
+    if left:
+        result += left
+    if right:
+        result += right
 
-break
+    return result
 
-return result
+
+unordered_list1 = [356, 746, 264, 569, 949, 895, 125, 455]
+unordered_list2 = [787, 677, 391, 318, 543, 717, 180, 113, 795, 19,
+                   202, 534, 201, 370, 276, 975, 403, 624, 770, 595, 571, 268, 373]
+unordered_list3 = [860, 380, 151, 585, 743, 542, 147, 820, 439, 865, 924, 387]
+
+ordered_list1 = merge_sort(unordered_list1)
+ordered_list2 = merge_sort(unordered_list2)
+ordered_list3 = merge_sort(unordered_list3)
+
+print(f'ordered_list1:{ordered_list1}')
+print(f'ordered_list2:{ordered_list2}')
+print(f'ordered_list3:{ordered_list3}')
+
 
 # Example array
 A = [-5, 3, 2, 1, -3, -3, 7, 2, 2]
@@ -113,3 +139,4 @@ print('A_insertion', A_insertion)
 
 selection_sort(A_selection)
 print('selection_sort', A_selection)
+print(merge([1, 8, 9, 25], [4, 6, 8, 9]))
