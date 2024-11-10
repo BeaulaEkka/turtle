@@ -1,0 +1,1 @@
+#quick sort Quicksort is an unusual algorithm in that the worst case runtime is O(N^2), but the average case is O(N * logN). 
