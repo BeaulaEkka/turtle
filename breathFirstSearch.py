@@ -58,12 +58,14 @@ def bfs(visited, graph, node):
 
     while queue:
         m = queue.pop(0)
-        print(m, end='')
+        print(m, end='--> ')
 
         for neighbour in graph[m]:
             if neighbour not in visited:
                 visited.append(neighbour)
+                print(f'visited:{visited}')
                 queue.append(neighbour)
+                print(f'queue:{queue}')
 
 #Driver Code
 print("following is the breath-first Search")
