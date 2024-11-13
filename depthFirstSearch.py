@@ -48,3 +48,8 @@ print(f'heappush A:{A}')
 # Time:O(logn),space:O(1)
 minn = heapq.heappop(A)
 print(f'minn:{A, minn}')
+
+
+
+#heapSort
+# Time:O(nlogn),space:O(1)
