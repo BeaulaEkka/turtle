@@ -38,7 +38,13 @@ heapq.heapify(A)
 print(A)
 # [-4, 0, 1, 3, 2, 5, 10, 8, 12, 9] not completely in ascending order
 
-#Heap Push(insert an element)
+# Heap Push(insert an element)
 # Time:O(logn),space:O(1)
-heapq.heappush(A,4)
+heapq.heappush(A, 4)
 print(f'heappush A:{A}')
+
+
+# Heap pop(Extract min)
+# Time:O(logn),space:O(1)
+minn = heapq.heappop(A)
+print(f'minn:{A, minn}')
