@@ -50,6 +50,18 @@ minn = heapq.heappop(A)
 print(f'minn:{A, minn}')
 
 
-
-#heapSort
+# heapSort
 # Time:O(nlogn),space:O(1)
+def heapsort(arr):
+    heapq.heapify(arr)
+    n = len(arr)
+    new_list = [0]*n
+
+    for i in range(n):
+        minn = heapq.heappop(arr)
+        new_list[i] = minn
+    return new_list
+
+
+heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+print(f'heapsort:{heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])}')
