@@ -1,0 +1,39 @@
+# def dfs(G,v): G here is graph( O(v+e)) number of vertices and no.of edges
+# visit(v)
+'''
+marked=[False] G.size()
+def dfs(G,v):
+visit(v)
+marked[v]=True
+for w in G.neighbors(v):# for each neighbour of v
+if not marked[w]:
+dfs(G.w)# use that as a starting node
+
+'''
+
+# DFS implementation 2
+"""
+marked=[False]*G.size()
+def dfs(G,v):
+stack=[v]
+while len(stack)>0:
+v=stack.pop()
+if not marked[v]:
+visit(v)
+marked[v]=True
+
+for w in G.neighbors(v):
+if not marked[w]:
+stack.append(w)
+"""
+
+# Preorder V/S Postorder
+
+# Build Min Heap(Heapify)
+# Time:O(n),space:O(1)
+
+import heapq
+A = [-4, 3, 1, 0, 2, 5, 10, 8, 12, 9]
+heapq.heapify(A)
+print(A)
+# [-4, 0, 1, 3, 2, 5, 10, 8, 12, 9] not completely in ascending order
