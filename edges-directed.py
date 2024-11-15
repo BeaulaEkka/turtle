@@ -1,4 +1,5 @@
 # Array of Edges-Directed [ start, End]
+from collections import defaultdict
 n = 8
 A = [
     [0, 1],
@@ -12,13 +13,18 @@ A = [
     [5, 2],
 ]
 # convert Array of Edges ->Adjency Matrix
-M=[]
+M = []
 for i in range(n):
-    
+
     M.append([0]*n)
-for u,v in A:
-    M[u][v]=1
-    M[v][u]=1 # uncomment if undirected
-print(M)
+for u, v in A:
+    M[u][v] = 1
+    # M[v][u]=1 # uncomment if undirected
+# print(M)
 
 
+# Convert Array of Edges->Adjency List
+D = defaultdict(list)
+for u, v in A:
+    D[u].append(v)
+print(D)
