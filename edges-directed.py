@@ -27,4 +27,9 @@ for u, v in A:
 D = defaultdict(list)
 for u, v in A:
     D[u].append(v)
-print(D)
+print(M[3])
+print(D[3])
+
+
+#DFS with Recursion-O(v+E)
+def dfs_recursive(node)
