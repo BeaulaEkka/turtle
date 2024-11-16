@@ -27,9 +27,21 @@ for u, v in A:
 D = defaultdict(list)
 for u, v in A:
     D[u].append(v)
+    # D[v].append(u) #undirected
 print(M[3])
 print(D[3])
 
 
-#DFS with Recursion-O(v+E)
-def dfs_recursive(node)
+# DFS with Recursion-O(v+E)
+def dfs_recursive(node):
+    print(f'node:{node}')  # processing
+    for nei_node in D[node]:
+        if nei_node not in seen:
+            seen.add(nei_node)
+            dfs_recursive(nei_node)  # immediately to to the neighbour node
+
+
+source = 0
+seen = set()
+seen.add(source)
+dfs_recursive(source)
