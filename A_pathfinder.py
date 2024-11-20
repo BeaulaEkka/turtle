@@ -79,3 +79,47 @@ class Spot:
 def h(p1, p2):
     x1, y1 = p1
     x2, y2 = p2
+    return abs(x1-x2)+abs(y1-y2)
+
+
+def make_grid(rows, width):
+    grid = []
+    gap = width//rows
+    for i in range(rows):
+        grid.append([])
+        for j in range(rows):
+            spot = Spot(i, j, gap, rows)
+            grid[i].append(spot)
+    return grid
+
+
+def draw_grid(win, rows, width):  # draw grid lines
+    gap = width//rows
+    for i in range(rows):
+        pygame.draw.line(win, WHITE, (0, i*gap),
+                         (width, i * gap))  # vertical lines
+        for j in range(rows):
+            pygame.draw.line(win, WHITE, (j*gap, 0),
+                             (j*gap, width))  # horizontal lines
+
+
+def draw(win, grid, rows, width):
+    win.fill(WHITE)
+    for row in grid:
+        for spot in row:
+            spot.draw(win)
+
+    draw_grid(win, rows, width)
+    pygame.display.upate()
+
+
+def get_clicked_pos(pos, rows, width):  # pos=position pos=mouse position
+    gap = width//rows
+    y, x = pos
+
+    row = y//gap
+    col = x//gap
+    return row, col
+
+def main(win,width):
+    
